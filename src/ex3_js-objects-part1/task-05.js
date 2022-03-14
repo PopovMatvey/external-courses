@@ -1,9 +1,5 @@
 function getCopyObject(object) {
-  const RETURNED_OBJECT = {};
-
-  Object.assign(RETURNED_OBJECT, object);
-
-  return RETURNED_OBJECT;
+  return Object.assign({}, object); // eslint-disable-line
 }
 
 module.exports = getCopyObject;

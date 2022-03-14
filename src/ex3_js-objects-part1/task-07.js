@@ -1,25 +1,16 @@
+function isObject(object) {
+  return (typeof object === 'object');
+}
+
 function getDeepClone(object) {
-  const OBJECT_KEYS = Object.keys(object);
+  const isArray = Array.isArray(object);
+  const cloneObject = isArray ? [] : {};
 
-  const functionsObject = {
-
-    Object: () => {
-      const cloneObject = {};
-
-      OBJECT_KEYS.forEach((property) => {
-        cloneObject[property] = getDeepClone(object[property]);
-      });
-      return cloneObject;
-    },
-
-    Array: () => object.map((i) => getDeepClone(i)),
-  };
-
-  if (object.constructor.name in functionsObject) {
-    return functionsObject[object.constructor.name]();
+  for (const key in object) { // eslint-disable-line
+    cloneObject[key] = isObject(object[key]) ? getDeepClone(object[key]) : object[key];
   }
 
-  return object;
+  return cloneObject;
 }
 
 module.exports = getDeepClone;

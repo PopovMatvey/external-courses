@@ -1,11 +1,11 @@
 function getPairKeyValue(object) {
-  const PROCESSED_OBJECT = Object.entries(object);
+  const processedObject = Object.entries(object);
 
-  PROCESSED_OBJECT.forEach((value) => {
+  processedObject.forEach((value) => {
     console.log(value);
   });
 
-  return '';
+  return undefined;
 }
 
 module.exports = getPairKeyValue;
