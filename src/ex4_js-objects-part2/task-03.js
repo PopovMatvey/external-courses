@@ -3,6 +3,14 @@ function deleteFirstAndLastSpace(string) {
     return string.substr(1, string.length - 2);
   }
 
+  if ((string[0] === ' ')) {
+    return string.substr(1);
+  }
+
+  if ((string[string.length - 1] === ' ')) {
+    return string.substr(0, string.length - 1);
+  }
+
   return string;
 }
 

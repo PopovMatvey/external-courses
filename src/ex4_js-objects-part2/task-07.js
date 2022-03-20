@@ -1,15 +1,9 @@
 function geySubDetermLengthString(string, lengthString) {
-  let returnedString = '';
-
-  for (let i = 0; i < string.length; i++) {
-    if (i >= lengthString - 1) {
-      returnedString += '…';
-      break;
-    }
-    returnedString += string[i];
+  if (string.length > lengthString) {
+    return `${string.substring(0, lengthString - 1)}…`;
   }
 
-  return returnedString;
+  return string;
 }
 
 module.exports = geySubDetermLengthString;

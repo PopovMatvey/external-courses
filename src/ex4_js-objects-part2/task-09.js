@@ -1,18 +1,13 @@
 function getConcatenationString(string, insertString, indexSpace) {
-  let concatenationString = '';
-  let counterSpace = 0;
+  const arrayWords = string.split(/\s+/);
 
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] === ' ') {
-      counterSpace++;
-      if (counterSpace === indexSpace + 1) {
-        concatenationString += ` ${insertString}`;
-      }
+  for (let i = 0; i < arrayWords.length; i++) {
+    if (i === indexSpace) {
+      arrayWords[i] += ` ${insertString}`;
     }
-    concatenationString += string[i];
   }
 
-  return concatenationString;
+  return arrayWords.join(' ');
 }
 
 module.exports = getConcatenationString;

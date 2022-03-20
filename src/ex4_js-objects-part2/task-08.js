@@ -9,7 +9,7 @@ function getStringInLowerCamelCase(string) {
     }
   }
 
-  return returnedString[0].toLowerCase() + returnedString.substring(1);
+  return returnedString.split(/^/).map((word) => word[0].toLowerCase() + word.substring(1)).join('');
 }
 
 module.exports = getStringInLowerCamelCase;

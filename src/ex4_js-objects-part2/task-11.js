@@ -5,6 +5,7 @@ function getObjectWithAmountChars(string) {
     if (!object.hasOwnProperty(string[i])) {
       object[string[i]] = 0;
     }
+
     if (object.hasOwnProperty(string[i])) {
       object[string[i]] += 1;
     }
