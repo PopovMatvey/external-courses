@@ -1,101 +1,65 @@
 const createCalculator = () => {
   let result = 0;
+
+  function add(value) {
+    if (typeof value === 'undefined') {
+      value = 0; // eslint-disable-line no-param-reassign
+    }
+
+    result += value;
+
+    return add;
+  }
+
+  function subtract(value) {
+    if (typeof value === 'undefined') {
+      value = 0;// eslint-disable-line no-param-reassign
+    }
+
+    result -= value;
+
+    return subtract;
+  }
+
+  function multiply(value) {
+    if (typeof value === 'undefined') {
+      value = 1;// eslint-disable-line no-param-reassign
+    }
+
+    result *= value;
+
+    return multiply;
+  }
+
+  function divide(value) {
+    if (typeof value === 'undefined') {
+      value = 1;// eslint-disable-line no-param-reassign
+    }
+
+    result /= value;
+
+    return divide;
+  }
+
+  function reset() {
+    result = 0;
+  }
+
+  function getResult() {
+    return result;
+  }
+
   return {
-
-    add: (value) => {
-            function functionRecurs(value) {// eslint-disable-line
-        if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-                    value = 0;// eslint-disable-line
-        }
-        result += value;
-
-        return functionRecurs;
-      }
-
-      if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-                value = 0;// eslint-disable-line
-      }
-
-      result += value;
-
-      return functionRecurs;
-    },
-
-    subtract: ((value) => {
-      function functionRecurs(value) {// eslint-disable-line
-        if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-                    value = 0;// eslint-disable-line
-        }
-
-        result -= value;
-
-        return functionRecurs;
-      }
-
-      if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-                value = 0;// eslint-disable-line
-      }
-
-      result -= value;
-
-      return functionRecurs;
-    }),
-
-    divide: ((value) => {
-      function functionRecurs(value) {// eslint-disable-line
-        if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-          value = 1;// eslint-disable-line
-        }
-
-        result /= value;
-
-        return functionRecurs;
-      }
-
-      if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-        value = 1;// eslint-disable-line
-      }
-
-      result /= value;
-
-      return functionRecurs;
-    }),
-
-    multiply: ((value) => {
-      function functionRecurs(value) {// eslint-disable-line
-        if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-          value = 1;// eslint-disable-line
-        }
-
-        result *= value;
-
-        return functionRecurs;
-      }
-
-      if ((typeof value !== 'number') || (Number.isNaN(value)) || (typeof value === 'undefined')) {
-        value = 1;// eslint-disable-line
-      }
-
-      result *= value;
-
-      return functionRecurs;
-    }),
-
-    getResult: (() => result),
-
-    reset: (() => result = 0),// eslint-disable-line
-
+    add,
+    subtract,
+    multiply,
+    divide,
+    getResult,
+    reset,
   };
+  
 };
 
 const calculator = createCalculator();
-
-calculator.add = calculator.add();
-
-calculator.subtract = calculator.subtract();
-
-calculator.multiply = calculator.multiply();
-
-calculator.divide = calculator.divide();
 
 module.exports = calculator;
