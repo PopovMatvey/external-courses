@@ -1,9 +1,15 @@
 function reduceAnalog(array, callback, initialValue) {
-  if (initialValue === undefined) {
-    return array.slice(1, array.length).reduce(callback, array[0]);
+  let initialFunctionValue = initialValue;
+
+  for (let i = 0; i < array.length; i++) {
+    if (initialFunctionValue !== undefined) {
+      initialFunctionValue = callback(initialFunctionValue, array[i], i, array);
+    } else {
+      initialFunctionValue = array[i];
+    }
   }
 
-  return array.reduce(callback, initialValue);
+  return initialFunctionValue;
 }
 
 module.exports = reduceAnalog;

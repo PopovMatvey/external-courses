@@ -1,5 +1,11 @@
 function mapAnalog(array, callback) {
-  return array.map(callback);
+  const returnedArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    returnedArray.push(callback(array[i], i, array));
+  }
+
+  return returnedArray;
 }
 
 module.exports = mapAnalog;
