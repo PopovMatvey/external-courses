@@ -80,7 +80,7 @@ li::before {
     content: "";
     display: block;
     width: 100%;
-    margin: 10px 0px 0px 0px;
+    margin-top: 10px;
     border-bottom: 1px solid black;
 }
 
@@ -94,8 +94,8 @@ li::before {
     content: "";
     display: block;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    border: 1px solid black;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
 }
 
 .tables-block {
@@ -115,8 +115,8 @@ th, td {
     content: "";
     display: block;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    border: 1px solid black;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
 }
 
 .image-block {
@@ -133,8 +133,8 @@ img {
     content: "";
     display: block;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    border: 1px solid black;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
 }
 
 .text-programm-block {

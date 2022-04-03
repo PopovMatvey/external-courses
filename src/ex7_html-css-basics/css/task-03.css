@@ -23,7 +23,7 @@ span{
 }
 
 .third-block {
-    box-shadow: 0px 0px 0px 3px black; 
+    box-shadow: 0 0 0 3px black; 
 }
 
 .fouth-block{
