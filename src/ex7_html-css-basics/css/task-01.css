@@ -1,1 +1,85 @@
+.task {
+    width: 100%;
+    text-align: center;
+}
 
+.task-text {
+    width: 100%;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 400px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 300px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+h3::after {
+    content: "";
+    display: block;
+    width: 240px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+h4::after {
+    content: "";
+    display: block;
+    width: 220px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+h5::after {
+    content: "";
+    display: block;
+    width: 160px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+h6::after {
+    content: "";
+    display: block;
+    width: 130px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+.list {
+    list-style: none;
+}
+
+.task-background {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background-color: #00FFFF;
+}
+
+table {
+    margin: 20px auto 20px auto;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+.task-first-img {
+    width: 400px;
+    height: 100%;
+}
+
+.task-text__paragraf span::before{
+    content: "\a0\a0";
+}
