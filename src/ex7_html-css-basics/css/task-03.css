@@ -1,0 +1,36 @@
+div {
+    width: 200px;
+    height: 200px;
+    background: rgb(155, 213, 247);
+    margin: 30px auto 30px auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+span{
+    display: block;
+    text-align: center;
+}
+
+.first-block {
+    border: 3px solid black;
+}
+
+.second-block {
+    outline: 3px solid #000;
+}
+
+.third-block {
+    box-shadow: 0 0 0 3px black; 
+}
+
+.fouth-block{
+    border: none;
+    transition: 1s all;
+}
+
+.fouth-block:hover{
+    border: 3px solid black;
+}
