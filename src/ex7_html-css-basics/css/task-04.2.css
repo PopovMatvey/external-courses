@@ -1,0 +1,18 @@
+th, td {
+    border: 1px solid black;
+}
+
+.text-programm-block {
+    width: 100%;
+    background: #FF00FF;
+}
+
+.text-programm {
+    width: 200px;
+    margin: auto;
+
+}
+
+.text-programm pre {
+    font-weight: 900;
+}

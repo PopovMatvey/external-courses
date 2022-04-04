@@ -1,0 +1,16 @@
+.tables-block::after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+
+.image-block::after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}

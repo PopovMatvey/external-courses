@@ -1,51 +1,10 @@
+@import "task-04.2.css"; 
 @font-face {
     font-family: 'SendFlowers';
     src: url('../fonts/SendFlowers-Regular.eot');
     src: local('☺'), url('../fonts/SendFlowers-Regular.woff') format('woff'), url('../fonts/SendFlowers-Regular.ttf') format('truetype'), url('../fonts/SendFlowers-Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
-}
-
-body {
-    width: 100%;
-    font-family: 'SendFlowers';
-}
-
-a, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
-}
-
-h3 {
-    text-align: center;
-}
-
-ol {
-    width: 100px;
-    margin: auto;
-}
-
-ul {
-    width: 100px;
-    margin: auto;
-}
-
-li {
-    list-style: none;
-}
-
-li::before {
-    content: "*";
-    font-size: 20px;
-    color: #00FF00;
 }
 
 .beginer-page {
@@ -103,51 +62,3 @@ li::before {
     background: lightcoral;
 }
 
-table {
-    margin: auto;
-}
-
-th, td {
-    border: 1px solid black;
-}
-
-.tables-block::after {
-    content: "";
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    border-bottom: 1px solid black;
-}
-
-.image-block {
-    width: 1350px;
-    background: aqua;
-}
-
-img {
-    display: block;
-    margin: auto;
-}
-
-.image-block::after {
-    content: "";
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    border-bottom: 1px solid black;
-}
-
-.text-programm-block {
-    width: 100%;
-    background: #FF00FF;
-}
-
-.text-programm {
-    width: 200px;
-    margin: auto;
-
-}
-
-.text-programm pre {
-    font-weight: 900;
-}
