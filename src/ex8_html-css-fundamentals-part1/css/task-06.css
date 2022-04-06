@@ -1,0 +1,39 @@
+.checkout-button {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 110px;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(224, 222, 222) 50%, rgba(160, 159, 160, 1) 100%);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(110, 110, 110);
+    border: 1px solid rgba(58, 60, 61, 0.8);
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.checkout-button:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    z-index: -1;
+    border-radius: 8px;
+    background: rgb(207, 207, 207);
+    border: 0.5px solid white;
+    outline: 1px solid black;
+    outline-offset: 1px;
+}
+
+.checkout-button span::before{
+    content: "\2605\a0";
+    color: rgb(160, 155, 155);
+}
+
+.checkout-button span::after{
+    content: "\a0\2605 ";
+    color: rgb(160, 155, 155);
+}
