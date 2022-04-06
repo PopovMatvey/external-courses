@@ -1,0 +1,37 @@
+body {
+    padding: 30px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+header {
+    width: 100%;
+    background: lightblue;
+}
+
+section {
+    background: lightgreen;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    background: white;
+    margin: 0 0 1rem 0;
+}
+
+aside {
+    background: pink;
+    width: 25%;
+    order: 999;
+    margin-left: auto;
+}
+
+header, article, section, .module {
+    padding: 1rem;
+}
