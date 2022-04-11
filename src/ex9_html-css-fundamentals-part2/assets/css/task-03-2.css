@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'AnekTamil';
+    src: url('../fonts/AnekTamil/AnekTamil-Medium.eot');
+    src: url('../fonts/AnekTamil/AnekTamil-Medium.woff') format('woff'),
+        url('../fonts/AnekTamil/AnekTamil-Medium.ttf') format('truetype'),
+        url('../fonts/AnekTamil/AnekTamil-Medium.svg') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-family: 'AnekTamil';
+    font-weight: 400;
+}

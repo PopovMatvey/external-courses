@@ -1,0 +1,60 @@
+body {
+    padding: 40px 0px 0px 40px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+span::after {
+    content: "\a0";
+}
+
+div {
+    padding: 10px 0px 5px 5px;
+}
+
+hr {
+    size: 2px;
+    width: 95%;
+}
+
+.form-row {
+    display: flex;
+}
+
+.title-block{
+    align-items: flex-end;
+}
+
+.title-block select{
+    width: 200px;
+}
+
+.title-block option{
+    margin-left: 10px;
+}
+
+.title-block .title-block__title{
+    margin: 0px 0px 0px 0px;
+    font-weight: 600;
+}
+
+.personal-data-form {
+    padding: 0px 0px 0px 5px;
+}
+
+.contact-information-form {
+    padding: 0px 0px 0px 5px;
+}
+
+.block-password {
+    margin: 20px 0px 0px 0px;
+}
+
+.buttons-form input:nth-child(2) {
+    margin: 0px 0px 0px 5px;
+}
