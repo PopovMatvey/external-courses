@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/task-02.css">
+    <title>task-02</title>
+</head>
+
+<body>
+    <main>
+        <form action="http://httpbin.org/post" method="post">
+            <div class="personal-data-form">
+                <fieldset>
+                    <legend>Pesonal data</legend>
+                    <div class="form-row">
+                        <span>Surname</span>
+                        <input type="text" name="Surname">
+                    </div>
+                    <div class="form-row">
+                        <span>First Name</span>
+                        <input type="text" name="FirstName">
+                    </div>
+                    <div class="form-row">
+                        <span>Middle name</span>
+                        <input type="text" name="MiddleName">
+                    </div>
+                    <div class="form-row">
+                        <span>You'are</span>
+                        <input type="radio" name="gender" value="male" checked>
+                        <span>male</span>
+                        <input type="radio" name="gender" value="female">
+                        <span>female</span>
+                    </div>
+                    <div class="form-row">
+                        <span>Middle name</span>
+                        <input type="number" min="18" max="101" value="18" name="age">
+                    </div>
+                    <div class="form-row">
+                        <span>Country of Residence</span>
+                        <select name="CountryResidence" id="">
+                            <option value="Russian_Federetion">Russian Federetion</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="France">France</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <span>City</span>
+                        <input type="checkbox" name="City" value="Razan">
+                        <span>Razan</span>
+                        <input type="checkbox" name="City" value="Moscow">
+                        <span>Moscow</span>
+                    </div>
+                    <div class="form-row">
+                        <span>Photography</span>
+                        <input type="file" name="Photography">
+                    </div>
+                    <hr>
+                    <div class="form-row title-block">
+                        <span>Title</span>
+                        <select name="subjects[]" multiple="multiple" size="8">
+                            <option value="1" class="title-block__title">Technologies</option>
+                            <option value="2">Web Master</option>
+                            <option value="3">Database Administrator</option>
+                            <option value="4">Computer-aided design</option>
+                            <option value="5" class="title-block__title">Finance</option>
+                            <option value="6">Economic Planing</option>
+                            <option value="7">Management accounting</option>
+                            <option value="8">Budgeting and planning</option>
+                          </select>
+                    </div>
+                    <div class="form-row">
+                        <span>Salariy</span>
+                        <input type="range" name="Salariy">
+                    </div>
+                    <div class="form-row">
+                        <textarea name="massege" id="" cols="40" rows="10" placeholder="Tell about yourself..."></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="contact-information-form">
+                <fieldset>
+                    <legend>Contact information</legend>
+                    <div class="form-row">
+                        <span>Site</span>
+                        <input type="text" name="Site">
+                    </div>
+                    <div class="form-row">
+                        <span>Email</span>
+                        <input type="email" name="Email">
+                    </div>
+                    <div class="form-row">
+                        <span>Phone</span>
+                        <input type="tel" name="Phone">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-row block-password">
+                <span>Phone</span>
+                <input type="password" required name="Phone">
+            </div>
+
+            <div class="form-row buttons-form">
+                <input type="submit">
+                <input type="reset">
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
