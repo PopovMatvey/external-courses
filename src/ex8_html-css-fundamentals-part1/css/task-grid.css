@@ -1,0 +1,34 @@
+body {
+    padding: 30px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 50% 35%;
+}
+
+header {
+    background: lightblue;
+}
+
+section {
+    background: lightgreen;
+    width: 75%;
+}
+
+article {
+    background: white;
+    height: 35%;
+    margin: 0 0 1rem 0;
+}
+
+aside {
+    background: pink;
+    width: 25%;
+    justify-self: end;
+}
+
+header, article, section, .module {
+    padding: 1rem;
+}
