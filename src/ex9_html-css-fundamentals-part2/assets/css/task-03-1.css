@@ -1,0 +1,54 @@
+#table-head{
+    background: #e3eaf3;
+    height: 25px;
+    font-weight: 500;
+    color: #758697;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+tbody {
+    color: #4c637b;
+}
+
+th:nth-child(1) {
+    width: 145px;
+}
+
+th:nth-child(2) {
+    width: 150px;
+}
+
+th:nth-child(3) {
+    width: 190px;
+}
+
+th:nth-child(4) {
+    width: 130px;
+}
+
+td {
+    height: 50px;
+    font-size: 16px;
+    padding: 0px 10px 0px 20px;
+}
+
+tbody tr {
+    transition: 0.5s all;
+}
+
+tbody tr:nth-child(even) {
+    background: #e8edf4;
+}
+
+tbody tr:nth-child(odd) {
+    background: #f2f6fa;
+}
+
+tbody tr:hover {
+    background: #e2e5e9;
+}
+
+.cell-name {
+    text-transform: capitalize;
+}

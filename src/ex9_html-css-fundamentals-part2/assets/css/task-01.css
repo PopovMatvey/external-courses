@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(231, 204, 171);
+}
+
+main {
+    width: 300px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+span {
+    display: block;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0px 20px 0px
+}
+
+.round-image {
+    border-radius: 50%;
+}
+
+.difficult-form-image {
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}

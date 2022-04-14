@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/task-02.css">
+    <title>task-02</title>
+</head>
+
+<body>
+    <main>
+        <form action="http://httpbin.org/post" method="post">
+            <div class="personal-data-form">
+                <fieldset>
+                    <legend>Pesonal data</legend>
+                    <div class="form-row">
+                        <label for="surname">Surname</label>
+                        <input id="surname" type="text" name="Surname">
+                    </div>
+                    <div class="form-row">
+                        <label for="firstNmae">First Name</label>
+                        <input id="firstNmae" type="text" name="FirstName">
+                    </div>
+                    <div class="form-row">
+                        <label for="middleName">Middle name</label>
+                        <input id="middleName" type="text" name="MiddleName">
+                    </div>
+                    <div class="form-row">
+                        <label>You'are</label>
+                        <input id="male" type="radio" name="gender" value="male" checked>
+                        <label for="male">male</label>
+                        <input id="female" type="radio" name="gender" value="female">
+                        <label for="female">female</label>
+                    </div>
+                    <div class="form-row">
+                        <label for="age">Age</label>
+                        <input id="age" type="number" min="18" max="101" value="18" name="age">
+                    </div>
+                    <div class="form-row">
+                        <label for="countryResidence">Country of Residence</label>
+                        <select id="countryResidence" name="CountryResidence" id="">
+                            <option value="Russian_Federetion">Russian Federetion</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="France">France</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label>City</label>
+                        <input id="razan" type="checkbox" name="City" value="Razan">
+                        <label for="razan">Razan</label>
+                        <input id="moscow" type="checkbox" name="City" value="Moscow">
+                        <label for="moscow">Moscow</label>
+                    </div>
+                    <div class="form-row">
+                        <label for="photography">Photography</label>
+                        <input id="photography" type="file" name="Photography">
+                    </div>
+                    <hr>
+                    <div class="form-row title-block">
+                        <label for="title">Title</label>
+                        <select id="title" name="subjects[]" multiple="multiple" size="8">
+                            <option value="1" class="title-block__title">Technologies</option>
+                            <option value="2">Web Master</option>
+                            <option value="3">Database Administrator</option>
+                            <option value="4">Computer-aided design</option>
+                            <option value="5" class="title-block__title">Finance</option>
+                            <option value="6">Economic Planing</option>
+                            <option value="7">Management accounting</option>
+                            <option value="8">Budgeting and planning</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="salariy">Salariy</label>
+                        <input id="salariy" type="range" name="Salariy">
+                    </div>
+                    <div class="form-row">
+                        <textarea name="massege" id="" cols="40" rows="10"
+                            placeholder="Tell about yourself..."></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="contact-information-form">
+                <fieldset>
+                    <legend>Contact information</legend>
+                    <div class="form-row">
+                        <label for="site">Site</label>
+                        <input id="site" type="text" name="Site">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="Email">
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="tel" name="Phone">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-row block-password">
+                <label for="password">Password</label>
+                <input id="password" type="password" required name="Phone">
+            </div>
+
+            <div class="form-row buttons-form">
+                <input type="submit">
+                <input type="reset">
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
