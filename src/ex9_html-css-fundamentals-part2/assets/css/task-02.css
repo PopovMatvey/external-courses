@@ -9,7 +9,7 @@ main {
     height: auto;
 }
 
-span::after {
+label::after {
     content: "\a0";
 }
 
