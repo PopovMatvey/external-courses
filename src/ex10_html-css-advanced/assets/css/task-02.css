@@ -18,12 +18,12 @@ form {
 
 .field-specific-location {
     width: 70%;
-    padding: 0px 0px 0px 20px;
+    padding-left: 20px;
 }
 
 .field-description {
     width: 100%;
-    padding: 0px 0px 30px 0px;
+    padding-bottom: 30px;
 }
 
 .input-field {
@@ -31,7 +31,7 @@ form {
     flex-direction: column-reverse;
 }
 
-.button-submit {
+button {
     width: 100px;
     height: 30px;
     margin: 0;
@@ -39,14 +39,13 @@ form {
     font-size: 16px;
     cursor: pointer;
     margin: auto;
-    border: 1px solid black;
-    border-bottom: none;
+    border: 1px solid #000;
     transition: 1s all;
 }
 
-.button-submit:hover {
-    background: black;
-    color: white;
+button:hover {
+    background: #000;
+    color: #fff;
 }
 
 input {
@@ -61,24 +60,36 @@ input {
 label {
     opacity: 0;
     padding-left: 20px;
-    color: #bdbdbd;
+    color: #157cc0;
     transform: translateY(30px);
-    transform-origin: left top;
-    cursor: text;
+    font-weight: 600;
     transition: all 0.3s;
 }
 
-input:focus,
-input:not(:placeholder-shown) {
-    border-bottom: 1px solid #212121;
+input:placeholder-shown+label {
+    visibility: hidden;
+    z-index: -1;
 }
 
-
-input:focus~label,
-input:not(:placeholder-shown)~label {
-    padding: 0;
+input:not(:placeholder-shown)+label,
+input:focus:not(:placeholder-shown)+label {
+    visibility: visible;
+    z-index: 1;
     opacity: 1;
-    font-weight: 600;
-    color: rgb(21, 124, 192);
-    transform: translateY(20px) scale(0.8);
+    animation: emergenceLabel 0.5s linear;
+}
+
+@keyframes emergenceLabel {
+    0% {
+        opacity: 0;
+        margin-bottom: -5px;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        margin-bottom: 0px;
+    }
 }
