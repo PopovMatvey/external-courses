@@ -14,20 +14,15 @@
     font-display: swap;
 }
 
-.d-flex {
+.wrapper {
     display: flex;
-}
-
-.justify-content-center {
     justify-content: center;
-}
-
-.align-items-center {
     align-items: center;
 }
 
 body {
     min-width: 300px;
+    height: 100%;
 }
 
 header {
@@ -53,22 +48,25 @@ svg {
     line-height: 14px;
 }
 
-.menu-field_list a {
+.menu-field_list button {
     font-family: 'Proxima_Nova_Regular';
     text-decoration: none;
+    background: none;
     color: #69738c;
     font-size: 13px;
     font-weight: 500;
     transition: 1s all;
 }
 
-.menu-field_list a:hover {
+.menu-field_list button:hover {
     color: #fff;
 }
 
 .menu-field_list__second_item {
     display: block;
-    margin: -1px 15px 0px 15px;
+    background: none;
+    cursor: none;
+    margin: 0px 15px 0px 15px;
 }
 
 .menu-field_list__third_item {
@@ -81,6 +79,10 @@ svg {
     width: 160px;
     height: 45px;
     border-radius: 0px 5px 0px 0px;
+}
+
+.user-field_chart{
+    background: none;
 }
 
 .user-field_avatar {
@@ -97,8 +99,13 @@ svg {
     color: #fff;
 }
 
+main {
+    width: 100%;
+    height: calc(100vh - 90px);
+}
+
 footer {
-    line-height: 45px;
+    height: 45px;
 }
 
 .footer-links {
@@ -109,19 +116,26 @@ footer {
 }
 
 .footer-tools {
+    display: flex;
     width: 110px;
     height: 45px;
 }
 
 .question-field {
     background: #1f2637;
-    height: 45px;
-    width: 55px;
+    padding: 15px 21px 15px 20px;
+}
+
+.question-field_chart {
+    background: none;
 }
 
 .options-field {
     background: #15a4fa;
-    height: 45px;
-    width: 55px;
+    padding: 15px 20px 15px 21px;
     border-radius: 0px 0px 5px 0px;
+}
+
+.options-field_chart {
+    background: none;
 }
