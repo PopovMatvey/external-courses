@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/FontAwesome.otf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima_Nova_Regular';
+    src: url('../fonts/Proxima_Nova_Regular.otf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-width: 300px;
+    height: 100%;
+}
+
+header {
+    line-height: 45px;
+    border-radius: 50% 0px 20px 0px;
+}
+
+svg {
+    cursor: pointer;
+}
+
+.menu-field {
+    background: #2f364a;
+    width: calc(100% - 160px);
+    height: 45px;
+    justify-content: end;
+    border-radius: 5px 0px 0px 0px;
+}
+
+.menu-field_list {
+    list-style: none;
+    flex-wrap: wrap;
+    line-height: 14px;
+}
+
+.menu-field_list button {
+    font-family: 'Proxima_Nova_Regular';
+    text-decoration: none;
+    background: none;
+    color: #69738c;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 1s all;
+}
+
+.menu-field_list button:hover {
+    color: #fff;
+}
+
+.menu-field_list__second_item {
+    display: block;
+    background: none;
+    cursor: none;
+    margin: 0px 15px 0px 15px;
+}
+
+.menu-field_list__third_item {
+    margin-right: 20px;
+}
+
+.user-field {
+    justify-content: space-evenly;
+    background: #15a4fa;
+    width: 160px;
+    height: 45px;
+    border-radius: 0px 5px 0px 0px;
+}
+
+.user-field_chart{
+    background: none;
+}
+
+.user-field_avatar {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #6eb5eb;
+}
+
+.user-name {
+    font-family: "Proxima_Nova_Regular";
+    font-size: 13px;
+    color: #fff;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 90px);
+}
+
+footer {
+    height: 45px;
+}
+
+.footer-links {
+    background: #181e2c;
+    width: calc(100% - 110px);
+    height: 45px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.footer-tools {
+    display: flex;
+    width: 110px;
+    height: 45px;
+}
+
+.question-field {
+    background: #1f2637;
+    padding: 15px 21px 15px 20px;
+}
+
+.question-field_chart {
+    background: none;
+}
+
+.options-field {
+    background: #15a4fa;
+    padding: 15px 20px 15px 21px;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.options-field_chart {
+    background: none;
+}
