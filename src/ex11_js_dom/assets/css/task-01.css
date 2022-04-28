@@ -13,10 +13,17 @@
      margin: 50px auto 0px auto;
  }
 
+ .items {
+     width: 1000px;
+     height: 400px;
+ }
+
  .item {
+     position: absolute;
      object-fit: cover;
      width: 100%;
      height: auto;
+     z-index: 5;
  }
 
  .slider .prev,
@@ -32,6 +39,7 @@
      cursor: pointer;
      border-radius: 0 3px 3px 0;
      transition: 1s all;
+     z-index: 50;
  }
 
  .slider .next {
@@ -68,19 +76,4 @@
  .slider .prev:focus:not(:focus-visible),
  .slider .next:focus:not(:focus-visible) {
      outline: 0;
- }
-
- .slider .item {
-     animation-name: fade;
-     animation-duration: 1.5s;
- }
-
- @keyframes fade {
-     from {
-         opacity: 0.4
-     }
-
-     to {
-         opacity: 1
-     }
  }
