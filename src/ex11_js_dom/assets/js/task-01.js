@@ -5,7 +5,6 @@ const nextButton = document.querySelector('.next');
 
 const arrayImages = ['assets/images/first.jpg', 'assets//images/second.jpg', 'assets//images/third.jpg'];
 let defaultSlideIndex = 1;
-let offset = 0;
 
 function createAllImages(inputArray) {
   for (let i = 0; i < inputArray.length; i++) {
