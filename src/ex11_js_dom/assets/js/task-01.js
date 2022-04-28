@@ -1,15 +1,19 @@
 const sliderLine = document.querySelector('.slider');
-const prevButton = document.createElement('button');
-const nextButton = document.createElement('button');
+const itemsBlock = document.querySelector('.items');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
 const arrayImages = ['assets/images/first.jpg', 'assets//images/second.jpg', 'assets//images/third.jpg'];
 let defaultSlideIndex = 1;
+let offset = 0;
 
 function createAllImages(inputArray) {
   for (let i = 0; i < inputArray.length; i++) {
     const imgBlock = document.createElement('img');
     imgBlock.className = 'item';
-    sliderLine.appendChild(imgBlock);
+    itemsBlock.appendChild(imgBlock);
     imgBlock.src = inputArray[i];
+    imgBlock.style.zIndex = inputArray.length - i;
   }
 }
 
@@ -25,10 +29,16 @@ function showSlideItem(item) {
   }
 
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+    slides[i].style.opacity = '0';
   }
 
-  slides[defaultSlideIndex - 1].style.display = 'block';
+  slides[defaultSlideIndex - 1].animate([
+    { opacity: '0.4' },
+    { opacity: '1' }
+  ], {
+    duration: 1000,
+  });
+  slides[defaultSlideIndex - 1].style.opacity = '1';
 }
 
 function addSlideIndex() {
@@ -49,13 +59,3 @@ nextButton.addEventListener('click', () => {
 
 createAllImages(arrayImages);
 showSlideItem(defaultSlideIndex);
-
-prevButton.className = 'prev';
-prevButton.innerHTML = '&#10094;';
-
-sliderLine.appendChild(prevButton);
-
-nextButton.className = 'next';
-nextButton.innerHTML = '&#10095;';
-
-sliderLine.appendChild(nextButton);
