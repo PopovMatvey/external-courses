@@ -210,7 +210,6 @@ h1 {
     padding: 10px 20px 10px 20px;
 }
 
-
 .side-panel_options-library .button-active, .button-active span {
     background: #15a4fa;
     color: #fff;
@@ -220,14 +219,14 @@ h1 {
 .book-chart {
     font-size: 14px;
     font-family: "FontAwesome";
-    color: rgb(120, 130, 157);
+    color: #78829D;
     z-index: 50;
 }
 
 .cart-chart {
     font-size: 14px;
     font-family: "FontAwesome";
-    color: rgb(120, 130, 157);
+    color: #78829D;
     z-index: 59;
 }
 
@@ -241,14 +240,14 @@ h1 {
 .wishist-chart {
     font-size: 16px;
     font-family: "FontAwesome";
-    color: rgb(120, 130, 157);
+    color: #78829D;
     z-index: 67;
 }
 
 .watch-chart {
     font-size: 14px;
     font-family: "FontAwesome";
-    color: rgb(120, 130, 157);
+    color: #78829D;
     z-index: 71;
 }
 
@@ -398,7 +397,7 @@ h1 {
     top: 37%;
     right: 30px;
     font-size: 14px;
-    color: rgb(140, 151, 178);
+    color: #78829D;
     z-index: 196;
     cursor: pointer;
     transition: all .1s;
@@ -412,18 +411,15 @@ h1 {
     overflow-y: scroll;
 }
 
-/* Width */
 .main-content_book-list-block::-webkit-scrollbar {
     width: 6px;
-  }
-  
-  
-  /* Thumb */
-  .main-content_book-list-block::-webkit-scrollbar-thumb {
+}
+
+.main-content_book-list-block::-webkit-scrollbar-thumb {
     background: #ccd5e4;
     border-radius: 2.5px;
     margin-right: 6px;
-  }     
+}
 
 .main-content_book-list-block__row-books {
     display: flex;
