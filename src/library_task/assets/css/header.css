@@ -1,0 +1,64 @@
+.menu-field {
+    background: #2f364a;
+    width: calc(100% - 160px);
+    height: 45px;
+    justify-content: end;
+    border-radius: 5px 0px 0px 0px;
+}
+
+.menu-field_list {
+    list-style: none;
+    flex-wrap: wrap;
+    line-height: 14px;
+}
+
+.menu-field_list button {
+    font-family: 'Proxima_Nova_Regular';
+    text-decoration: none;
+    background: none;
+    color: #69738c;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 1s all;
+}
+
+.menu-field_list button:hover {
+    color: #fff;
+}
+
+.menu-field_list__second_item {
+    display: block;
+    background: none;
+    cursor: none;
+    margin: 0px 15px 0px 15px;
+}
+
+.menu-field_list__third_item {
+    margin-right: 20px;
+}
+
+.user-field {
+    font-family: "Proxima_Nova_Regular";
+    justify-content: space-evenly;
+    background: #15a4fa;
+    width: 160px;
+    height: 45px;
+    border-radius: 0px 5px 0px 0px;
+}
+
+.user-field_chart {
+    background: none;
+}
+
+.user-field_avatar {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #6eb5eb;
+}
+
+.user-name {
+    font-size: 13px;
+    color: #fff;
+}
