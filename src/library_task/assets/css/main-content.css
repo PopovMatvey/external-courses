@@ -1,0 +1,195 @@
+.main-content {
+    width: 85%;
+    height: 100%;
+    background: #eef1f7;
+}
+
+@media screen and (max-width:1270px) {
+    .main-content {
+        width: calc(100% - 200px);
+    }
+}
+
+.main-content_header__tools {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main-content_header__tools___filter ul {
+    display: flex;
+    margin: 25px 0px 0px 20px;
+}
+
+.main-content_header__tools___filter li {
+    margin: 0px 25px 15px 0px;
+}
+
+.main-content_header__tools___filter li button {
+    background: none;
+    width: 100%;
+    border-radius: 20px;
+    padding: 2px 12px 2px 12px;
+    color: #a0a9c0;
+    transition: 1s all;
+}
+
+.main-content_header__tools___filter li button:hover {
+    color: #fff;
+    background: #97b3ce;
+}
+
+.main-content_header__tools___filter li .item-filter-active {
+    color: #fff;
+    background: #97b3ce;
+}
+
+.main-content_header__tools___search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar {
+    font-size: 13px;
+    width: 400px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    padding-left: 20px;
+    border: 1px solid #c9cfdc;
+    color: #949eb7;
+    transition: all 1s;
+    transition-delay: 1s;
+    margin: 25px 0px 20px 20px;
+}
+
+.searchbar::placeholder {
+    color: #949eb7;
+}
+
+.magnifying-glass-chart {
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 43%;
+    right: 15px;
+    font-size: 14px;
+    color: #78829D;
+    cursor: pointer;
+    transition: all 1s;
+    transition-delay: 1s;
+}
+
+.main-content_book-list-block {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    overflow-y: scroll;
+}
+
+.main-content_book-list-block::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main-content_book-list-block::-webkit-scrollbar-thumb {
+    background: #ccd5e4;
+    border-radius: 2px;
+    margin-right: 6px;
+}
+
+.main-content_book-list-block__row-books {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 30px 20px 0px 20px;
+}
+
+.main-content_book-list-block__row-books___item {
+    width: 220px;
+    height: 370px;
+    margin: 0px 5px 30px 5px;
+    cursor: pointer;
+}
+
+.main-content_book-list-block__row-books___item____img-block {
+    width: 100%;
+    height: 275px;
+    background: #97b3ce;
+    border-radius: 4px;
+}
+
+.main-content_book-list-block__row-books___item____img-block img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-content_book-list-block__row-books___item h4 {
+    color: #444c63;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: 0.1s all;
+}
+
+.main-content_book-list-block__row-books___item h4:hover{
+    color: #15a4fa;
+}
+
+.main-content_book-list-block__row-books___item span {
+    display: block;
+    font-size: 12px;
+    color: #6f7d95;
+    margin: 11px 0px 12px 0px;
+}
+
+.main-content_book-list-block__row-books___item____rating-result {
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+}
+
+.main-content_book-list-block__row-books___item____rating-result____body {
+    position: relative;
+}
+
+.main-content_book-list-block__row-books___item____rating-result____body::before {
+    content: "★★★★★";
+    display: block;
+    color: #fff;
+    text-shadow: 1px 1px 0px #ffb111;
+}
+
+.main-content_book-list-block__row-books___item__rating-result__body__progress-strip {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-content_book-list-block__row-books___item__rating-result__body__progress-strip::before {
+    content: "★★★★★";
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: #ffb111;
+}
+
+.main-content_book-list-block__row-books___item__rating-result__body__progress-strip__items {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content_book-list-block__row-books___item__rating-result__body__progress-strip__star {
+    height: 100%;
+    opacity: 0;
+}

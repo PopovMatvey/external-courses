@@ -1,0 +1,35 @@
+footer {
+    height: 45px;
+}
+
+.footer-links {
+    background: #181e2c;
+    width: calc(100% - 110px);
+    height: 45px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.footer-tools {
+    display: flex;
+    width: 110px;
+    height: 45px;
+}
+
+.question-field {
+    background: #1f2637;
+    padding: 15px 21px 15px 20px;
+}
+
+.question-field_chart {
+    background: none;
+}
+
+.options-field {
+    background: #15a4fa;
+    padding: 15px 20px 15px 21px;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.options-field_chart {
+    background: none;
+}
