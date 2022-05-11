@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/slide-panel.css">
   <link rel="stylesheet" href="assets/css/main-content.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/modal-window.css">
   <title>My library</title>
 </head>
 
@@ -51,7 +52,7 @@
   <main>
     <div class="side-panel">
       <div class="side-panel_add-book-block wrapper">
-        <button>
+        <button id="addBook">
           <span class="plus-chart .chart">
             &#61543;
             <span>
@@ -200,15 +201,15 @@
         <div class="main-content_header__tools">
           <div class="main-content_header__tools___filter">
             <ul>
-              <li><button class="item-filter-active">All Books</button></li>
-              <li><button>Most Recent</button></li>
-              <li><button>Most Popular</button></li>
-              <li><button>Free books</button></li>
+              <li><button class="item-filter-active" id="allBooksButton">All Books</button></li>
+              <li><button id="mostRecentButton">Most Recent</button></li>
+              <li><button id="mostPopularButton">Most Popular</button></li>
+              <li><button id="freeBooksButton">Free books</button></li>
             </ul>
           </div>
           <div class="main-content_header__tools___search">
-            <input type="text" maxlength="30" placeholder="Enter Keywords" class="searchbar">
-            <span class="magnifying-glass-chart">
+            <input type="text" maxlength="30" placeholder="Enter Keywords" class="searchbar" id="searchBarInput">
+            <span class="magnifying-glass-chart" id="searchBarChart">
               &#61442;
             </span>
           </div>
@@ -243,7 +244,57 @@
       </div>
     </div>
   </footer>
+  <div class="modal-window-block" id="modalWindow">
+    <div class="modal-window-content">
+      <div class="modal-window-content_header">
+        <h5>add book form</h5>
+        <span class="close-chart" id="closeChart">&times;</span>
+      </div>
+      <div class="modal-window-content_body">
+        <h6>Fill in all the fields</h6>
+        <div class="row-form">
+          <label for="titleBook">Title book</label>
+          <input type="text" id="titleBook" name="TitleBook">
+        </div>
+        <div class="row-form">
+          <label for="authorBook">Author</label>
+          <input type="text" id="authorBook" name="AuthorBook">
+        </div>
+        <div class="row-form">
+          <label for="ratingBook">Rating</label>
+          <input type="number" value="5" min="0" max="5" step="0.01" id="ratingBook" name="Rating">
+        </div>
+        <div class="row-form">
+          <label for="uploadImage">Upload image</label>
+          <input type="file" id="uploadImage" name="UploadImage" class="upload-file-input">
+        </div>
+        <div class="row-form">
+          <input type="submit" class="add-book-input" id="addNewBook" value="Add a book">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-window-block" id="modalWindowOnChange">
+    <div class="modal-window-content">
+      <div class="modal-window-content_header">
+        <h5>Update rating book form</h5>
+        <span class="close-chart" id="closeChartOnChange">&times;</span>
+      </div>
+      <div class="modal-window-content_body">
+        <h6>Fill in all the fields</h6>
+          <span id="titleBookChange"></span>
+        <div class="row-form">
+          <label for="ratingBook">Rating</label>
+          <input type="number" min="0" max="5" step="0.01" id="ratingBookChange" name="Rating">
+        </div>
+        <div class="row-form">
+          <input type="submit" class="add-book-input" id="updateBook" value="Update a book">
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/eventsHandler.js"></script>
 </body>
 
 </html>
