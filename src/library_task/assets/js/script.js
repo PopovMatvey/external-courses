@@ -1,4 +1,9 @@
 const bookListImageBlock = document.querySelector('.main-content_book-list-block__row-books');
+const modalWindowOnChange = document.querySelector('#modalWindowOnChange');
+const titleBookChange = document.querySelector('#titleBookChange');
+const ratingBookChange = document.querySelector('#ratingBookChange');
+const updateNewBook = document.querySelector('#updateBook');
+const closeChartOnChange = document.querySelector('#closeChartOnChange');
 
 const arrayBooks = [
   {
@@ -9,7 +14,7 @@ const arrayBooks = [
   },
   {
     imageBookHref: 'assets/images/book-cover-cakes.jpg',
-    titleBookText: 'Cakes & Bakes',
+    titleBookText: 'Cakes and Bakes',
     spanBookText: 'by Sanjeev Kapoor',
     assessment: '5',
   },
@@ -65,7 +70,7 @@ const arrayBooks = [
 
 function calculeteProgressProcents(assessment) {
   const multiplication = assessment * 100;
-  
+
   return multiplication / 5;
 }
 
@@ -76,9 +81,38 @@ function addImage(imageHref, parentElement) {
   parentElement.appendChild(image);
 }
 
-function createTitleBook(titleText, parentElement) {
+function findDetermArrayItem(titleText, array) {
+  for (let i = 0; i < array.length; i++) {
+    if (titleText === array[i].titleBookText) {
+      return array[i];
+    }
+  }
+
+  return undefined;
+}
+
+function createClickEventBookItem(element, array) {
+  element.addEventListener('click', (event) => {
+    const clickedElement = findDetermArrayItem(event.path[0].innerHTML, array);
+
+    modalWindowOnChange.style.display = 'block';
+    ratingBookChange.value = clickedElement.assessment;
+    titleBookChange.innerHTML = clickedElement.titleBookText;
+  });
+}
+
+function clearInnerElement(element) {
+  element.innerHTML = ''; // eslint-disable-line no-param-reassign
+}
+
+function updateAsessmentBook(arrayItem, newAsessment) {
+  arrayItem.assessment = newAsessment; // eslint-disable-line no-param-reassign
+}
+
+function createTitleBook(titleText, parentElement, array) {
   const titleBook = document.createElement('h4');
 
+  createClickEventBookItem(titleBook, array);
   titleBook.innerHTML = titleText;
   parentElement.appendChild(titleBook);
 }
@@ -143,12 +177,12 @@ function createRatingBlock(assessment, parentElement) {
   parentElement.appendChild(ratingBlock);
 }
 
-function createBook(imageHref, titleText, spanText, assessment, parentElement) {
+function createBook(imageHref, titleText, spanText, assessment, parentElement, array) {
   const bookItemBlock = document.createElement('div');
 
   bookItemBlock.classList.add('main-content_book-list-block__row-books___item');
   createImageBook(imageHref, bookItemBlock);
-  createTitleBook(titleText, bookItemBlock);
+  createTitleBook(titleText, bookItemBlock, array);
   createSpanBook(spanText, bookItemBlock);
   createRatingBlock(assessment, bookItemBlock);
   parentElement.appendChild(bookItemBlock);
@@ -156,8 +190,91 @@ function createBook(imageHref, titleText, spanText, assessment, parentElement) {
 
 function fillAllBooks(array, parentElement) {
   for (let i = 0; i < array.length; i++) { // eslint-disable-line no-plusplus
-    createBook(array[i].imageBookHref, array[i].titleBookText, array[i].spanBookText, array[i].assessment, parentElement);// eslint-disable-line max-len
+    createBook(array[i].imageBookHref, array[i].titleBookText, array[i].spanBookText, array[i].assessment, parentElement, array);// eslint-disable-line max-len
   }
 }
 
+function addBookInArray(array, imagePath, // eslint-disable-line no-unused-vars
+  titleBook, authorBook, rating) { // eslint-disable-line no-unused-vars
+  array.push(
+    {
+      imageBookHref: imagePath,
+      titleBookText: titleBook,
+      spanBookText: authorBook,
+      assessment: rating,
+    },
+  );
+}
+
+function searchBook(array, regex) { // eslint-disable-line no-unused-vars
+  const returnedArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (regex.exec(array[i].titleBookText) != null) {
+      returnedArray.push({
+        imageBookHref: array[i].imageBookHref,
+        titleBookText: array[i].titleBookText,
+        spanBookText: array[i].spanBookText,
+        assessment: array[i].assessment,
+      });
+    } else if (regex.exec(array[i].spanBookText) != null) {
+      returnedArray.push({
+        imageBookHref: array[i].imageBookHref,
+        titleBookText: array[i].titleBookText,
+        spanBookText: array[i].spanBookText,
+        assessment: array[i].assessment,
+      });
+    }
+  }
+
+  return returnedArray;
+}
+
+function findDetermBooks(inputText, booksArray) { // eslint-disable-line no-unused-vars
+  const regex = new RegExp(inputText);
+
+  return searchBook(booksArray, regex);
+}
+
+function findMostPopularBooks(array) { // eslint-disable-line no-unused-vars
+  const returnedArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].assessment === 5) {
+      returnedArray.push({
+        imageBookHref: array[i].imageBookHref,
+        titleBookText: array[i].titleBookText,
+        spanBookText: array[i].spanBookText,
+        assessment: array[i].assessment,
+      });
+    }
+  }
+
+  return returnedArray;
+}
+
 fillAllBooks(arrayBooks, bookListImageBlock);
+
+closeChartOnChange.onclick = function () { // eslint-disable-line func-names
+  modalWindowOnChange.style.display = 'none';
+};
+
+window.onclick = function (event) { // eslint-disable-line func-names
+  if (event.target === modalWindowOnChange) {
+    modalWindowOnChange.style.display = 'none';
+  }
+};
+
+updateNewBook.onclick = function () { // eslint-disable-line func-names
+  const clickedElement = findDetermArrayItem(titleBookChange.innerHTML, arrayBooks);
+
+  if (ratingBookChange.value === '') {
+    alert('Input rating');// eslint-disable-line no-alert
+  } else {
+    updateAsessmentBook(clickedElement, ratingBookChange.value);
+    clearInnerElement(bookListImageBlock);
+    console.log(arrayBooks);
+    fillAllBooks(arrayBooks, bookListImageBlock);
+    modalWindowOnChange.style.display = 'none';
+  }
+};
