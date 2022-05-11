@@ -112,6 +112,7 @@
     width: 220px;
     height: 370px;
     margin: 0px 5px 30px 5px;
+    cursor: pointer;
 }
 
 .main-content_book-list-block__row-books___item____img-block {
@@ -130,6 +131,11 @@
     color: #444c63;
     font-size: 16px;
     margin-top: 15px;
+    transition: 0.1s all;
+}
+
+.main-content_book-list-block__row-books___item h4:hover{
+    color: #15a4fa;
 }
 
 .main-content_book-list-block__row-books___item span {
