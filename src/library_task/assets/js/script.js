@@ -240,7 +240,7 @@ function findMostPopularBooks(array) { // eslint-disable-line no-unused-vars
   const returnedArray = [];
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i].assessment === 5) {
+    if (array[i].assessment === '5') {
       returnedArray.push({
         imageBookHref: array[i].imageBookHref,
         titleBookText: array[i].titleBookText,
@@ -273,7 +273,6 @@ updateNewBook.onclick = function () { // eslint-disable-line func-names
   } else {
     updateAsessmentBook(clickedElement, ratingBookChange.value);
     clearInnerElement(bookListImageBlock);
-    console.log(arrayBooks);
     fillAllBooks(arrayBooks, bookListImageBlock);
     modalWindowOnChange.style.display = 'none';
   }

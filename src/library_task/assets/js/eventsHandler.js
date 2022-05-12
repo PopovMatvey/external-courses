@@ -26,6 +26,10 @@ window.onclick = function (event) { // eslint-disable-line func-names
   if (event.target === modalWindowBlock) {
     modalWindowBlock.style.display = 'none';
   }
+
+  if (event.target === modalWindowOnChange) {// eslint-disable-line no-undef
+    modalWindowOnChange.style.display = 'none';// eslint-disable-line no-undef
+  }
 };
 
 addNewBookInput.onclick = function () { // eslint-disable-line func-names
