@@ -188,6 +188,10 @@ function createBook(imageHref, titleText, spanText, assessment, parentElement, a
   parentElement.appendChild(bookItemBlock);
 }
 
+// addBookInArray(array, imageHref, // eslint-disable-line no-undef
+//   titleText, spanText, // eslint-disable-line no-undef
+//   assessment);// eslint-disable-line no-undef
+
 function fillAllBooks(array, parentElement) {
   for (let i = 0; i < array.length; i++) { // eslint-disable-line no-plusplus
     createBook(array[i].imageBookHref, array[i].titleBookText, array[i].spanBookText, array[i].assessment, parentElement, array);// eslint-disable-line max-len

@@ -14,6 +14,16 @@ const authorBook = document.querySelector('#authorBook');
 const ratingBook = document.querySelector('#ratingBook');
 const uploadImageBook = document.querySelector('#uploadImage');
 
+function addNewBook(array, imageHref, // eslint-disable-line no-undef
+  titleText, spanText, // eslint-disable-line no-undef
+  assessment) { // eslint-disable-line no-undef
+  createBook(imageHref, titleText, spanText, // eslint-disable-line no-undef
+    assessment, bookListImageBlock, array);// eslint-disable-line no-undef
+  addBookInArray(array, imageHref, // eslint-disable-line no-undef
+    titleText, spanText, // eslint-disable-line no-undef
+    assessment);// eslint-disable-line no-undef
+}
+
 addBookButton.onclick = function () { // eslint-disable-line func-names
   modalWindowBlock.style.display = 'block';
 };
@@ -27,7 +37,7 @@ window.onclick = function (event) { // eslint-disable-line func-names
     modalWindowBlock.style.display = 'none';
   }
 
-  if (event.target === modalWindowOnChange) {// eslint-disable-line no-undef
+  if (event.target === modalWindowOnChange) { // eslint-disable-line no-undef
     modalWindowOnChange.style.display = 'none';// eslint-disable-line no-undef
   }
 };
@@ -42,11 +52,9 @@ addNewBookInput.onclick = function () { // eslint-disable-line func-names
     reader.readAsDataURL(file);
 
     reader.onload = function () { // eslint-disable-line func-names
-      createBook(reader.result, titleBook.value, authorBook.value, // eslint-disable-line no-undef
+      addNewBook(arrayBooks, reader.result, titleBook.value, // eslint-disable-line no-undef
+        authorBook.value, // eslint-disable-line no-undef
         ratingBook.value, bookListImageBlock);// eslint-disable-line no-undef
-      addBookInArray(arrayBooks, reader.result, // eslint-disable-line no-undef
-        titleBook.value, authorBook.value, // eslint-disable-line no-undef
-        ratingBook.value);// eslint-disable-line no-undef
     };
 
     alert('Book has been added');// eslint-disable-line no-alert
