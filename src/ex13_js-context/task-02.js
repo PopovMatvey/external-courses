@@ -10,7 +10,7 @@ function changeString(guessWord, guessedString, inputChart) {
   const splitGuessedString = guessedString.split('');
   const splitGuessWord = guessWord.split('');
 
-  for (let i = 0; i < splitGuessWord.length; i++) {
+  for (let i = 0; i < splitGuessWord.length; i++) { // eslint-disable-line no-plusplus
     if (splitGuessWord[i] === inputChart) {
       splitGuessedString[i] = inputChart;
     }
@@ -38,7 +38,7 @@ const hangman = {
       );
       console.log(this.guessedString);
     } else {
-      this.errorsLeft--;
+      this.errorsLeft--;// eslint-disable-line no-plusplus
 
       if (this.wrongSymbols.indexOf(inputChart) === -1) {
         this.wrongSymbols.push(inputChart);
