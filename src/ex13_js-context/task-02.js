@@ -19,25 +19,28 @@ function changeString(guessWord, guessedString, inputChart) {
   return splitGuessedString.join('');
 }
 
-function Hangman(guessWord) {
-  this.guessWord = guessWord;
-  this.guessedString = createGuessedString(guessWord);
-}
-
 const hangman = {
 
   guessWord: '',
   guessedString: '',
   errorsLeft: 6,
   wrongSymbols: [],
+  checkOnWin: false,
 
   guess(inputChart) {
-    if (checkString(this.guessWord, inputChart)) {
+    if (this.checkOnWin) {
+      this.checkOnWin = true;
+      console.log('You won!');
+    } else if (checkString(this.guessWord, inputChart)) {
       this.guessedString = changeString(// eslint-disable-line no-return-assign
         this.guessWord, this.guessedString, inputChart,
       );
       console.log(this.guessedString);
-    } else {
+      if (this.guessWord === this.guessedString) {
+        this.checkOnWin = true;
+        console.log('You won!');
+      }
+    } else if (this.errorsLeft !== 0) {
       this.errorsLeft--;// eslint-disable-line no-plusplus
 
       if (this.wrongSymbols.indexOf(inputChart) === -1) {
@@ -45,8 +48,9 @@ const hangman = {
       }
 
       console.log(`wrong letter, errors left ${this.errorsLeft} | ${this.wrongSymbols}`);
+    } else {
+      console.log('You lost, the number of mistakes exceeds the limit!');
     }
-
     return this;
   },
 
@@ -71,14 +75,16 @@ const hangman = {
     this.guessedString = createGuessedString(guessWord);
     this.errorsLeft = 6;
   },
+
+  __proto__: this,
 };
 
-Hangman.prototype = hangman;
+function Hangman(guessWord) { // eslint-disable-line no-unused-vars
+  this.errorsLeft = 6;
+  this.wrongSymbols = [];
+  this.guessWord = guessWord;
+  this.guessedString = createGuessedString(guessWord);
+  this.__proto__ = hangman;
+}
 
-const game = new Hangman('aboba');
-
-console.log(game.guess('b').guess('a'));
-
-console.log(game.getStatus());
-
-module.exports = Hangman.prototype;
+module.exports = hangman;
