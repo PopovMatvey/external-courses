@@ -20,10 +20,6 @@ const authorBook = document.querySelector('#authorBook');
 const ratingBook = document.querySelector('#ratingBook');
 const uploadImageBook = document.querySelector('#uploadImage');
 
-const notificationWindow = document.querySelector('#notificationWindow');
-const notificationWindowTitle = document.querySelector('#notificationWindowTitle');
-const closeChartnotificationWindow = document.querySelector('#closeChartnotificationWindow');
-
 const arrayBooks = [
   {
     imageBookHref: 'assets/images/book-cover.jpg',
@@ -283,16 +279,11 @@ closeChartOnChange.addEventListener('click', () => {
   modalWindowOnChange.style.display = 'none';
 });
 
-closeChartnotificationWindow.addEventListener('click', () => {
-  notificationWindow.style.display = 'none';
-});
-
 updateNewBook.addEventListener('click', () => {
   const clickedElement = findDetermArrayItem(titleBookChange.innerHTML, arrayBooks);
 
   if (ratingBookChange.value === '') {
-    notificationWindow.style.display = 'block';
-    notificationWindowTitle.innerHTML = 'Input rating';
+    alert('Input rating');// eslint-disable-line no-alert
   } else {
     updateAsessmentBook(clickedElement, ratingBookChange.value);
     clearInnerElement(bookListImageBlock);
@@ -317,16 +308,11 @@ window.addEventListener('click', (event) => {
   if (event.target === modalWindowOnChange) {
     modalWindowOnChange.style.display = 'none';
   }
-
-  if (event.target === notificationWindow) {
-    notificationWindow.style.display = 'none';
-  }
 });
 
 addNewBookInput.addEventListener('click', () => {
   if ((titleBook.value === '') || (authorBook.value === '') || (ratingBook.value === '') || (uploadImageBook.value === '')) {
-    notificationWindow.style.display = 'block';
-    notificationWindowTitle.innerHTML = 'Fill in all the fields, please';
+    alert('Fill in all the fields, please');// eslint-disable-line no-alert
   } else {
     const file = uploadImageBook.files[0];
     const reader = new FileReader();
@@ -339,8 +325,7 @@ addNewBookInput.addEventListener('click', () => {
         ratingBook.value, bookListImageBlock);
     });
 
-    notificationWindow.style.display = 'block';
-    notificationWindowTitle.innerHTML = 'Book has been added';
+    alert('Book has been added');// eslint-disable-line no-alert
   }
 });
 
