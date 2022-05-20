@@ -54,6 +54,7 @@ module.exports = {
     'no-octal-escape': 2,
     'no-octal': 2,
     'no-console': 0,
+    'no-plusplus': 0,
     'no-param-reassign': [2, { props: true }],
     'no-process-env': 0,
     'no-proto': 0,
