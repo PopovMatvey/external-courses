@@ -33,7 +33,7 @@ const vacuumCleaner = { // eslint-disable-line no-use-before-define
         console.log('You shoud enter the working mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.workingMode.length; i++) {
+        for (let i = 0; i < this.workingMode.length; i++) {// eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.workingMode[i]} clearing`);
         }
       } else {
@@ -120,7 +120,7 @@ const robotSoldier = {
         console.log('You shoud enter the shooting mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.workingMode.length; i++) {
+        for (let i = 0; i < this.workingMode.length; i++) {// eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.workingMode[i]} `);
         }
       } else {

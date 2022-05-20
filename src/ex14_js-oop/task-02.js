@@ -122,7 +122,7 @@ class RobotGuard extends Robot {// eslint-disable-line no-unused-vars
         console.log('You shoud enter the shooting mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.typesWeapon.length; i++) {
+        for (let i = 0; i < this.typesWeapon.length; i++) {// eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.typesWeapon[i]} `);
         }
       } else {
@@ -150,7 +150,7 @@ class HouseholdAppliance extends ElectricalDevise {// eslint-disable-line no-unu
         console.log('You shoud enter the working mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.workingModes.length; i++) {
+        for (let i = 0; i < this.workingModes.length; i++) {// eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.workingModes[i]} `);
         }
       } else {
@@ -183,7 +183,7 @@ class Microwave extends HouseholdAppliance {// eslint-disable-line no-unused-var
 
   setCookingTimer(time, workingMode) { // eslint-disable-line  class-methods-use-this
     while (time !== 0) {
-      time--;// eslint-disable-line no-param-reassign
+      time--;// eslint-disable-line no-param-reassign// eslint-disable-line no-plusplus
       cook(workingMode);// eslint-disable-line no-undef
     }
 
@@ -197,7 +197,7 @@ class Microwave extends HouseholdAppliance {// eslint-disable-line no-unused-var
       console.log('You shoud enter the working mode number');
       console.log('There are:');
 
-      for (let i = 0; i < this.workingModes.length; i++) {
+      for (let i = 0; i < this.workingModes.length; i++) {// eslint-disable-line no-plusplus
         console.log(`${i + 1} - ${this.workingModes[i]} `);
       }
 
@@ -238,7 +238,7 @@ class Room {// eslint-disable-line no-unused-vars
   countPowerСonsumption() {
     let sumPowerСonsumption = 0;
     let sumCommonPower = 0;
-    for (let i = 0; i < this.arrayDevice.length; i++) {
+    for (let i = 0; i < this.arrayDevice.length; i++) {// eslint-disable-line no-plusplus
       if (this.arrayDevice[i].connectedOnMains && this.arrayDevice[i].switched) {
         sumPowerСonsumption += this.arrayDevice[i].powerIndicator;
       }
@@ -259,10 +259,10 @@ class Apartment {// eslint-disable-line no-unused-vars
   serchDeviceByname(name) {
     let counterFoundDevices = 0;
 
-    for (let i = 0; i < this.arrayRooms.length; i++) {
-      for (let j = 0; j < this.arrayRooms[i].arrayDevice.length; j++) {
+    for (let i = 0; i < this.arrayRooms.length; i++) {// eslint-disable-line no-plusplus
+      for (let j = 0; j < this.arrayRooms[i].arrayDevice.length; j++) {// eslint-disable-line no-plusplus
         if (this.arrayRooms[i].arrayDevice[j].electricalDeviceName === name) {
-          counterFoundDevices++;
+          counterFoundDevices++;// eslint-disable-line no-plusplus
           console.log(`Device found: ${this.arrayRooms[i].arrayDevice[j].electricalDeviceName}`);
         }
       }
