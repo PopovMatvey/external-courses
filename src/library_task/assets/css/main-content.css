@@ -1,6 +1,6 @@
 .main-content {
     width: 85%;
-    height: 100%;
+    height: calc(85vh - 90px);
     background: #eef1f7;
 }
 
@@ -84,13 +84,13 @@
 
 .main-content_book-list-block {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #fff;
     overflow-y: scroll;
 }
 
 .main-content_book-list-block::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
 }
 
 .main-content_book-list-block::-webkit-scrollbar-thumb {
@@ -160,6 +160,7 @@
     display: block;
     color: #fff;
     text-shadow: 1px 1px 0px #ffb111;
+    z-index: 1;
 }
 
 .main-content_book-list-block__row-books___item__rating-result__body__progress-strip {
@@ -169,6 +170,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .main-content_book-list-block__row-books___item__rating-result__body__progress-strip::before {
@@ -178,6 +180,7 @@
     width: 100%;
     height: 100%;
     color: #ffb111;
+    z-index: 1;
 }
 
 .main-content_book-list-block__row-books___item__rating-result__body__progress-strip__items {
@@ -192,4 +195,5 @@
 .main-content_book-list-block__row-books___item__rating-result__body__progress-strip__star {
     height: 100%;
     opacity: 0;
+    z-index: 1;
 }

@@ -4,6 +4,21 @@ const titleBookChange = document.querySelector('#titleBookChange');
 const ratingBookChange = document.querySelector('#ratingBookChange');
 const updateNewBook = document.querySelector('#updateBook');
 const closeChartOnChange = document.querySelector('#closeChartOnChange');
+const addBookButton = document.querySelector('#addBook');
+const modalWindowBlock = document.querySelector('#modalWindow');
+const closeChart = document.querySelector('#closeChart');
+const addNewBookInput = document.querySelector('#addNewBook');
+const searchBarInput = document.querySelector('#searchBarInput');
+const searchBarChart = document.querySelector('#searchBarChart');
+const freeBooksButton = document.querySelector('#freeBooksButton');
+const mostPopularButton = document.querySelector('#mostPopularButton');
+const mostRecentButton = document.querySelector('#mostRecentButton');
+const allBooksButton = document.querySelector('#allBooksButton');
+const arrayFilterItems = document.querySelectorAll('.main-content_header__tools___filter li button');
+const titleBook = document.querySelector('#titleBook');
+const authorBook = document.querySelector('#authorBook');
+const ratingBook = document.querySelector('#ratingBook');
+const uploadImageBook = document.querySelector('#uploadImage');
 
 const arrayBooks = [
   {
@@ -82,7 +97,7 @@ function addImage(imageHref, parentElement) {
 }
 
 function findDetermArrayItem(titleText, array) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) { // eslint-disable-line no-plusplus
     if (titleText === array[i].titleBookText) {
       return array[i];
     }
@@ -102,7 +117,7 @@ function createClickEventBookItem(element, array) {
 }
 
 function clearInnerElement(element) {
-  element.innerHTML = ''; // eslint-disable-line no-param-reassign
+  element.innerHTML = '';// eslint-disable-line no-param-reassign
 }
 
 function updateAsessmentBook(arrayItem, newAsessment) {
@@ -110,11 +125,11 @@ function updateAsessmentBook(arrayItem, newAsessment) {
 }
 
 function createTitleBook(titleText, parentElement, array) {
-  const titleBook = document.createElement('h4');
+  const titleBookElement = document.createElement('h4');
 
-  createClickEventBookItem(titleBook, array);
-  titleBook.innerHTML = titleText;
-  parentElement.appendChild(titleBook);
+  createClickEventBookItem(titleBookElement, array);
+  titleBookElement.innerHTML = titleText;
+  parentElement.appendChild(titleBookElement);
 }
 
 function createSpanBook(spanText, parentElement) {
@@ -133,7 +148,7 @@ function createImageBook(imageHref, parentElement) {
 }
 
 function createRatingStars(parentElement) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) { // eslint-disable-line no-plusplus
     const ratingStar = document.createElement('input');
 
     ratingStar.classList.add('main-content_book-list-block__row-books___item__rating-result__body__progress-strip__star');
@@ -194,22 +209,21 @@ function fillAllBooks(array, parentElement) {
   }
 }
 
-function addBookInArray(array, imagePath, // eslint-disable-line no-unused-vars
-  titleBook, authorBook, rating) { // eslint-disable-line no-unused-vars
+function addBookInArray(array, imagePath, titleBooktext, authorBookText, rating) {
   array.push(
     {
       imageBookHref: imagePath,
-      titleBookText: titleBook,
-      spanBookText: authorBook,
+      titleBookText: titleBooktext,
+      spanBookText: authorBookText,
       assessment: rating,
     },
   );
 }
 
-function searchBook(array, regex) { // eslint-disable-line no-unused-vars
+function searchBook(array, regex) {
   const returnedArray = [];
 
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) { // eslint-disable-line no-plusplus
     if (regex.exec(array[i].titleBookText) != null) {
       returnedArray.push({
         imageBookHref: array[i].imageBookHref,
@@ -230,17 +244,18 @@ function searchBook(array, regex) { // eslint-disable-line no-unused-vars
   return returnedArray;
 }
 
-function findDetermBooks(inputText, booksArray) { // eslint-disable-line no-unused-vars
-  const regex = new RegExp(inputText);
+function findDetermBooks(inputText, booksArray) {
+  const regString = `^${inputText}`;
+  const regex = new RegExp(regString);
 
   return searchBook(booksArray, regex);
 }
 
-function findMostPopularBooks(array) { // eslint-disable-line no-unused-vars
+function findMostPopularBooks(array) {
   const returnedArray = [];
 
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].assessment === 5) {
+  for (let i = 0; i < array.length; i++) { // eslint-disable-line no-plusplus
+    if (array[i].assessment === '5') {
       returnedArray.push({
         imageBookHref: array[i].imageBookHref,
         titleBookText: array[i].titleBookText,
@@ -253,19 +268,18 @@ function findMostPopularBooks(array) { // eslint-disable-line no-unused-vars
   return returnedArray;
 }
 
+function addNewBook(array, imageHref, titleText, spanText, assessment) {
+  createBook(imageHref, titleText, spanText, assessment, bookListImageBlock, array);
+  addBookInArray(array, imageHref, titleText, spanText, assessment);
+}
+
 fillAllBooks(arrayBooks, bookListImageBlock);
 
-closeChartOnChange.onclick = function () { // eslint-disable-line func-names
+closeChartOnChange.addEventListener('click', () => {
   modalWindowOnChange.style.display = 'none';
-};
+});
 
-window.onclick = function (event) { // eslint-disable-line func-names
-  if (event.target === modalWindowOnChange) {
-    modalWindowOnChange.style.display = 'none';
-  }
-};
-
-updateNewBook.onclick = function () { // eslint-disable-line func-names
+updateNewBook.addEventListener('click', () => {
   const clickedElement = findDetermArrayItem(titleBookChange.innerHTML, arrayBooks);
 
   if (ratingBookChange.value === '') {
@@ -273,8 +287,110 @@ updateNewBook.onclick = function () { // eslint-disable-line func-names
   } else {
     updateAsessmentBook(clickedElement, ratingBookChange.value);
     clearInnerElement(bookListImageBlock);
-    console.log(arrayBooks);
     fillAllBooks(arrayBooks, bookListImageBlock);
     modalWindowOnChange.style.display = 'none';
   }
-};
+});
+
+addBookButton.addEventListener('click', () => {
+  modalWindowBlock.style.display = 'block';
+});
+
+closeChart.addEventListener('click', () => {
+  modalWindowBlock.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target === modalWindowBlock) {
+    modalWindowBlock.style.display = 'none';
+  }
+
+  if (event.target === modalWindowOnChange) {
+    modalWindowOnChange.style.display = 'none';
+  }
+});
+
+addNewBookInput.addEventListener('click', () => {
+  if ((titleBook.value === '') || (authorBook.value === '') || (ratingBook.value === '') || (uploadImageBook.value === '')) {
+    alert('Fill in all the fields, please');// eslint-disable-line no-alert
+  } else {
+    const file = uploadImageBook.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.addEventListener('load', () => {
+      addNewBook(arrayBooks, reader.result, titleBook.value,
+        authorBook.value,
+        ratingBook.value, bookListImageBlock);
+    });
+
+    alert('Book has been added');// eslint-disable-line no-alert
+  }
+});
+
+searchBarInput.addEventListener('input', () => {
+  clearInnerElement(bookListImageBlock);
+
+  if (searchBarInput.value === '') {
+    fillAllBooks(arrayBooks, bookListImageBlock);
+  } else {
+    fillAllBooks(findDetermBooks(searchBarInput.value,
+      arrayBooks), bookListImageBlock);
+  }
+});
+
+searchBarChart.addEventListener('click', () => {
+  clearInnerElement(bookListImageBlock);
+
+  if (searchBarInput.value === '') {
+    fillAllBooks(arrayBooks, bookListImageBlock);
+  } else {
+    fillAllBooks(findDetermBooks(searchBarInput.value,
+      arrayBooks), bookListImageBlock);
+  }
+});
+
+allBooksButton.addEventListener('click', () => {
+  clearInnerElement(bookListImageBlock);
+  fillAllBooks(arrayBooks, bookListImageBlock);
+
+  for (let i = 0; i < arrayFilterItems.length; i++) { // eslint-disable-line no-plusplus
+    arrayFilterItems[i].classList.remove('item-filter-active');
+  }
+
+  allBooksButton.classList.add('item-filter-active');
+});
+
+mostRecentButton.addEventListener('click', () => {
+  clearInnerElement(bookListImageBlock);
+  fillAllBooks(arrayBooks, bookListImageBlock);
+
+  for (let i = 0; i < arrayFilterItems.length; i++) { // eslint-disable-line no-plusplus
+    arrayFilterItems[i].classList.remove('item-filter-active');
+  }
+
+  mostRecentButton.classList.add('item-filter-active');
+});
+
+mostPopularButton.addEventListener('click', () => {
+  clearInnerElement(bookListImageBlock);
+  fillAllBooks(findMostPopularBooks(arrayBooks), bookListImageBlock);
+
+  for (let i = 0; i < arrayFilterItems.length; i++) { // eslint-disable-line no-plusplus
+    arrayFilterItems[i].classList.remove('item-filter-active');
+  }
+
+  mostPopularButton.classList.add('item-filter-active');
+});
+
+freeBooksButton.addEventListener('click', () => {
+  clearInnerElement(bookListImageBlock);
+  fillAllBooks(arrayBooks, bookListImageBlock);
+
+  for (let i = 0; i < arrayFilterItems.length; i++) { // eslint-disable-line no-plusplus
+    arrayFilterItems[i].classList.remove('item-filter-active');
+  }
+
+  freeBooksButton.classList.add('item-filter-active');
+});
