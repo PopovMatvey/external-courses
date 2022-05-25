@@ -1,31 +1,26 @@
-const electricalDevise = {
-  powerIndicator: 0,
-  stateDevice: false,
+function ElectricalDevise() {
+  this.powerIndicator = 0;
+  this.stateDevice = false;
 
-  turnOnDevice() {
+  this.turnOnDevice = function () { // eslint-disable-line func-names
     this.stateDevice = true;
-  },
+  };
 
-  turnOffDevice() {
+  this.turnOffDevice = function () { // eslint-disable-line func-names
     this.stateDevice = false;
-  },
-};
+  };
+}
 
 function VacuumCleaner(powerValue) { // eslint-disable-line no-unused-vars
+  ElectricalDevise.call(this);
+
   this.powerIndicator = powerValue;
   this.activeWorkingModeNumber = 0;
   this.workingMode = ['dry', 'wet'];
   this.activeWorkingMode = this.workingMode[this.activeWorkingModeNumber];
   this.stateDevice = false;
-  this.__proto__ = vacuumCleaner;// eslint-disable-line no-use-before-define
-}
 
-const vacuumCleaner = { // eslint-disable-line no-use-before-define
-  workingMode: ['dry', 'wet'],
-  activeWorkingWork: '',
-  activeWorkingModeNumber: 0,
-
-  chageWorkingMode(indexWorkingMode) {
+  this.chageWorkingMode = function (indexWorkingMode) { // eslint-disable-line func-names
     indexWorkingMode -= 1;// eslint-disable-line no-param-reassign
 
     if (this.stateDevice) {
@@ -33,7 +28,7 @@ const vacuumCleaner = { // eslint-disable-line no-use-before-define
         console.log('You shoud enter the working mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.workingMode.length; i++) {// eslint-disable-line no-plusplus
+        for (let i = 0; i < this.workingMode.length; i++) { // eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.workingMode[i]} clearing`);
         }
       } else {
@@ -45,35 +40,29 @@ const vacuumCleaner = { // eslint-disable-line no-use-before-define
     } else {
       console.log('The vacuum cleaner is off');
     }
-  },
+  };
 
-  getInformation() {
+  this.getInformation = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       return `Vacuum cleaner power: ${this.powerIndicator
       } \ncurrent working mode: ${this.workingMode[this.activeWorkingModeNumber]}`;
     }
 
     return 'The vacuum cleaner is off';
-  },
-
-  __proto__: electricalDevise,
-};
+  };
+}
 
 function RobotCleaner(powerValue) { // eslint-disable-line no-unused-vars
+  VacuumCleaner.call(this);
+
   this.powerIndicator = powerValue;
   this.activeWorkingModeNumber = 0;
   this.workingMode = ['dry', 'wet'];
   this.activeWorkingMode = this.workingMode[this.activeWorkingModeNumber];
   this.stateDevice = false;
   this.locationMap = 'Map not installed';
-  this.__proto__ = robotCleaner;// eslint-disable-line no-use-before-define
-}
 
-const robotCleaner = {
-
-  locationMap: 'Map not installed',
-
-  installationMap() {
+  this.installationMap = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       this.locationMap = 'Map has been installation';
 
@@ -81,9 +70,9 @@ const robotCleaner = {
     }
 
     return 'The vacuum cleaner is off';
-  },
+  };
 
-  getInformation() {
+  this.getInformation = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       return `Vacuum cleaner power: ${this.powerIndicator
       } \n${this.locationMap}     \ncurrent working mode:
@@ -91,28 +80,20 @@ const robotCleaner = {
     }
 
     return 'The vacuum cleaner is off';
-  },
-
-  __proto__: vacuumCleaner,
-};
+  };
+}
 
 function RobotSoldier(powerValue) { // eslint-disable-line no-unused-vars
+  RobotCleaner.call(this);
+
   this.powerIndicator = powerValue;
   this.activeWorkingModeNumber = 0;
   this.workingMode = ['Not shoot', 'shoot'];
   this.activeWorkingMode = this.workingMode[this.activeWorkingModeNumber];
   this.stateDevice = false;
   this.locationMap = 'Map not installed';
-  this.__proto__ = robotSoldier;// eslint-disable-line no-use-before-define
-}
 
-const robotSoldier = {
-
-  workingMode: ['Not shoot', 'shoot'],
-  activeWorkingWork: '',
-  activeWorkingModeNumber: 0,
-
-  chageWorkingMode(indexWorkingMode) {
+  this.chageWorkingMode = function (indexWorkingMode) { // eslint-disable-line func-names
     indexWorkingMode -= 1;// eslint-disable-line no-param-reassign
 
     if (this.stateDevice) {
@@ -120,7 +101,7 @@ const robotSoldier = {
         console.log('You shoud enter the shooting mode number');
         console.log('There are:');
 
-        for (let i = 0; i < this.workingMode.length; i++) {// eslint-disable-line no-plusplus
+        for (let i = 0; i < this.workingMode.length; i++) { // eslint-disable-line no-plusplus
           console.log(`${i + 1} - ${this.workingMode[i]} `);
         }
       } else {
@@ -132,9 +113,9 @@ const robotSoldier = {
     } else {
       console.log('The robot soldier is off');
     }
-  },
+  };
 
-  beginShooting() {
+  this.beginShooting = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       this.activeWorkingModeNumber = 1;
 
@@ -142,9 +123,9 @@ const robotSoldier = {
     }
 
     return 'The robot soldier is off';
-  },
+  };
 
-  stopShooting() {
+  this.stopShooting = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       this.activeWorkingModeNumber = 0;
 
@@ -152,25 +133,23 @@ const robotSoldier = {
     }
 
     return 'The robot soldier is off';
-  },
+  };
 
-  shootStatus() {
+  this.shootStatus = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
       return `Shoot status: ${this.workingMode[this.activeWorkingModeNumber]}`;
     }
 
     return 'The robot soldier is off';
-  },
+  };
 
-  getInformation() {
+  this.getInformation = function () { // eslint-disable-line func-names
     if (this.stateDevice) {
-      return `Robot soldier power: ${this.powerIndicator} 
-      \n${this.locationMap} \ncurrent working mode: 
+      return `Robot soldier power: ${this.powerIndicator}
+      \n${this.locationMap} \ncurrent working mode:
       ${this.workingMode[this.activeWorkingModeNumber]}`;
     }
 
     return 'The robot soldier is off';
-  },
-
-  __proto__: robotCleaner,
-};
+  };
+}
